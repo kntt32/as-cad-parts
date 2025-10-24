@@ -1,12 +1,32 @@
 /// ## Usage
 /// ```
 /// extrude(5) {
-///   gear(10, 0.314, 3.14,-0.2);
+///   gear(10, 0.314, 3.14, -0.2);
 /// }
 /// ```
 as gear(radius, delta, size, adjust) {
   circle(radius);
   for(angle, 0, 6.28, delta) {
+    rotate(0, 0, angle) {
+      scale(0.866) {
+        translate(adjust, 0, 0) {
+          translate(size, 0, 0) {
+            scale(1.154) {
+              translate(10, 0, 0) {
+                rotate(0, 0, 2.617) {
+                  triangle(size);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+as partial_gear(radius, delta, size, range, adjust) {
+  circle(radius);
+  for(angle, 0, range, delta) {
     rotate(0, 0, angle) {
       scale(0.866) {
         translate(adjust, 0, 0) {
