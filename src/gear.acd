@@ -12,7 +12,7 @@ as gear(radius, delta, size, adjust) {
         translate(adjust, 0, 0) {
           translate(size, 0, 0) {
             scale(1.154) {
-              translate(10, 0, 0) {
+              translate(radius, 0, 0) {
                 rotate(0, 0, 2.617) {
                   triangle(size);
                 }
@@ -32,7 +32,7 @@ as partial_gear(radius, delta, size, range, adjust) {
         translate(adjust, 0, 0) {
           translate(size, 0, 0) {
             scale(1.154) {
-              translate(10, 0, 0) {
+              translate(radius, 0, 0) {
                 rotate(0, 0, 2.617) {
                   triangle(size);
                 }
