@@ -1,0 +1,112 @@
+link "https://raw.githubusercontent.com/kntt32/as-cad-parts/refs/heads/main/src/gear.acd";
+link "https://raw.githubusercontent.com/kntt32/as-cad-parts/refs/heads/main/src/rack.acd";
+as not() {
+  not_case();
+  not_cover();
+  not_input_rod();
+  not_output_rod();
+  not_center_gear();
+}
+as not_print() {
+  not_case();
+  translate(40, 0, -4) {
+    not_cover();
+  }
+  translate(77.5, 17.5, -2.1) {
+    not_input_rod();
+  }
+  translate(72.5, -12.5, -2.1) {
+    not_output_rod();
+  }
+  translate(97.5, -20, -2.1) {
+    not_center_gear();
+  }
+}
+as not_case() {
+  union {
+    cube(35, 55, 2);
+    cube(2.5, 55, 4);
+    translate(32.5, 0, 0) {
+      cube(2.5, 55, 4);
+    }
+    translate(12.5, 0, 0) {
+      cube(22.5, 2.5, 4);
+    }
+    translate(0, 52.5, 0) {
+      cube(22.5, 2.5, 4);
+    }
+    translate(17.5, 27.5, 3) {
+      cylinder(1, 6);
+    }
+    translate(17.5, 5, 3) {
+      cylinder(1, 6);
+    }
+    translate(17.5, 15, 3) {
+      cylinder(1, 6);
+    }
+    translate(17.5, 40, 3) {
+      cylinder(1, 6);
+    }
+    translate(17.5, 50, 3) {
+      cylinder(1, 6);
+    }
+  }
+}
+as not_cover() {
+  translate(0, 0, 4) {
+    subtract {
+      cube(35, 55, 2);
+      translate(17.5, 5, 0) {
+        cylinder(1.05, 10);
+      }
+      translate(17.5, 15, 0) {
+        cylinder(1.05, 10);
+      }
+      translate(17.5, 40, 0) {
+        cylinder(1.05, 10);
+      }
+      translate(17.5, 50, 0) {
+        cylinder(1.05, 10);
+      }
+      translate(17.5, 27.5, 0) {
+        cylinder(1.05, 10);
+      }
+    }
+  }
+}
+as not_input_rod() {
+  translate(2.6, -17.5, 2.1) {
+    not_rod();
+  }
+}
+as not_output_rod() {
+  translate(32.4, 72.5, 2.1) {
+    rotate(0, 0, 3.1415) {
+      not_rod();
+    }
+  }
+}
+as not_center_gear() {
+  translate(17.5, 27.5, 2.1) {
+    union {
+      subtract {
+        extrude(1.8) {
+          gear(4.8, 0.523, 2.56, -0.4);
+        }
+        cylinder(1.1, 4);
+      }
+    }
+  }
+}
+as not_rod() {
+  subtract {
+    cube(9.8, 60, 1.8);
+    translate(9.8, 25.85, 0) {
+      rotate(0, 0, 1.57) {
+        extrude(3) {
+          rack(2.56, 14);
+        }
+      }
+    }
+  }
+}
