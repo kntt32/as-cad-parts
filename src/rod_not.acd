@@ -1,5 +1,9 @@
-link "https://raw.githubusercontent.com/kntt32/as-cad-parts/refs/heads/main/src/gear.acd";
-link "https://raw.githubusercontent.com/kntt32/as-cad-parts/refs/heads/main/src/rack.acd";
+/// ## Usage
+/// ```
+/// link "https://raw.githubusercontent.com/kntt32/as-cad-parts/refs/heads/main/src/gear.acd";
+/// link "https://raw.githubusercontent.com/kntt32/as-cad-parts/refs/heads/main/src/rack.acd";
+/// not();
+/// ```
 as not() {
   not_case();
   not_cover();
